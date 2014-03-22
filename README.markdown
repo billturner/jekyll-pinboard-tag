@@ -1,27 +1,37 @@
-# Pinboard Tag Plugin for Jekyll
+# Pinboard tag plugin for Jekyll
 
-Generates a list of links to a user's public bookmarks
+Generates a list of links from a user's public [pinboard](http://pinboard.in/) bookmarks.
 
 ## Usage:
 
-    {% pinboard user:username limit:# %}
+    {% pinboard user:username limit:# tags:tag,tag %}
 
 ## Example:
 
-    {% pinboard user:ericdfields limit:12 %}
+    {% pinboard user:ericdfields limit:15 tags:ruby,rails %}
 
 ## All paramaters are optional, e.g.:
 
-    {% pinboard user:ericdfields %}
+  {% pinboard user:billturner %}
 
-## Default Configuration (override in _config.yml):
+The only parameters you can pass with the tag are: `user`, `limit`, and `tags`.
 
-    Pinboard_set:
-      user:            'ericdfields'
-      limit:  15
-      list_tag:     'ol'
-      list_class:   'pinboard_list'
-      a_target:        '_blank'
+## Configuration options available for use in `_config.yml`:
+
+    pinboard_tag:
+      user:       "billturner"
+      limit:      15               # default
+      list_tag:   "ol"             # default
+      list_class: "pinboard_list"  # default
+      a_target:   "_blank"         # default is ""
+      tags:       "ruby,jekyll"
+
+**Updates by:**
+
+* Bill Turner
+* http://github.com/billturner/jekyll-pinboard-tag
+
+**Original plugin author:**
 
 * Author: Eric D. Fields
 * Site: http://ericdfields.com
