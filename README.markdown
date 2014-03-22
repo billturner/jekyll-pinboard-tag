@@ -12,7 +12,7 @@ Generates a list of links from a user's public [pinboard](http://pinboard.in/) b
 
 ## All paramaters are optional, e.g.:
 
-  {% pinboard user:billturner %}
+    {% pinboard user:billturner %}
 
 The only parameters you can pass with the tag are: `user`, `limit`, and `tags`.
 
