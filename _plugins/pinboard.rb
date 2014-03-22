@@ -27,18 +27,15 @@
 #     a_target:   "_blank"         # default is ""
 #     tags:       "ruby,jekyll"
 #
+# ORIGINAL AUTHOR INFO:
+#
+# Eric D. Fields
+# http://github.com/ericdfields/Jekyll_Pinboard_Tag
+#
 # UPDATES BY:
+#
 # Bill Turner
 # http://github.com/billturner/jekyll-pinboard-tag
-# Plugin license: MIT
-#
-# ORIGINAL AUTHOR INFO:
-# Author: Eric D. Fields
-# Site: http://ericdfields.com
-# Twitter: @ericdfields
-# Email: ericdfields.com
-# Plugin Source: http://github.com/ericdfields/Jekyll_Pinboard_Tag
-# Plugin License: MIT
 #
 
 require 'net/http'

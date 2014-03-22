@@ -26,16 +26,12 @@ The only parameters you can pass with the tag are: `user`, `limit`, and `tags`.
       a_target:   "_blank"         # default is ""
       tags:       "ruby,jekyll"
 
+**Original plugin author:**
+
+* Eric D. Fields
+* http://github.com/ericdfields/Jekyll-Pinboard-Tag
+
 **Updates by:**
 
 * Bill Turner
 * http://github.com/billturner/jekyll-pinboard-tag
-
-**Original plugin author:**
-
-* Author: Eric D. Fields
-* Site: http://ericdfields.com
-* Twitter: @ericdfields
-* Email: ericdfields.com
-* Plugin Source: http://github.com/ericdfields/Jekyll-Pinboard-Tag
-* Plugin License: MIT
