@@ -12,14 +12,14 @@ Generates a list of links from a user's public [pinboard](http://pinboard.in/) b
 
 ## All paramaters are optional, e.g.:
 
-    {% pinboard user:billturner %}
+    {% pinboard user:ericdfields %}
 
 The only parameters you can pass with the tag are: `user`, `limit`, and `tags`.
 
 ## Configuration options available for use in `_config.yml`:
 
     pinboard_tag:
-      user:       "billturner"
+      user:       "ericdfields"
       limit:      15               # default
       list_tag:   "ol"             # default
       list_class: "pinboard_list"  # default

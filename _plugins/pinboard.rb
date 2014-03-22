@@ -20,7 +20,7 @@
 # Configuration options available for use in `_config.yml`:
 #
 #   pinboard_tag:
-#     user:       "billturner"
+#     user:       "ericdfields"
 #     limit:      15               # default
 #     list_tag:   "ol"             # default
 #     list_class: "pinboard_list"  # default
@@ -49,7 +49,7 @@ module Jekyll
       @options = tag_options(options)
       @config = Jekyll.configuration({})['pinboard_tag'] || {}
 
-      @user = @options["user"] || @config["user"] || "billturner"
+      @user = @options["user"] || @config["user"] || "ericdfields"
       @limit = (@options["limit"] || @config["limit"] || 15).to_i
       @tags = @options["tags"] || @config["tags"] || nil
 
