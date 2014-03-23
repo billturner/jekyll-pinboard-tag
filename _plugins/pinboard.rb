@@ -21,12 +21,14 @@
 #
 #   pinboard_tag:
 #     user:       "ericdfields"
-#     limit:      15               # default
-#     list_tag:   "ol"             # default
-#     list_class: "pinboard_list"  # default
-#     a_target:   "_blank"         # default is ""
+#     limit:      15
 #     tags:       "ruby,jekyll"
+#     list_tag:   "ol"
+#     list_class: "pinboard-list"
+#     new_tab:    false
+#     show_desc:  true
 #
+# Options explanation 
 # ORIGINAL AUTHOR INFO:
 #
 # Eric D. Fields
@@ -53,9 +55,10 @@ module Jekyll
       @limit = (@options["limit"] || @config["limit"] || 15).to_i
       @tags = @options["tags"] || @config["tags"] || nil
 
-      @config["list_tag"] ||= "ol"
-      @config["list_class"] ||= "pinboard_list"
-      @config["a_target"] ||= ""
+      @config["list_tag"]   ||= "ol"
+      @config["list_class"] ||= "pinboard-list"
+      @config["new_tab"]    ||= false
+      @config["show_desc"]  ||= false
     end
 
     def render(context)
@@ -67,13 +70,16 @@ module Jekyll
     end
 
     def render_bookmark(bookmark)
-      <<-EOF
-      <li>
-        <a href="#{bookmark.url}" target="#{@config["a_target"]}">
-          #{bookmark.title}
-        </a>
-      </li>
-      EOF
+      html = "<li>"
+      html += "<a href=\"#{bookmark.url}\""
+      html += " target=\"_blank\"" if @config["new_tab"]
+      html += ">"
+      html += "<p>#{bookmark.title}</p>"
+      if @config["show_description"]
+        html += "<blockquote>#{bookmark.description}</blockquote>"
+      end
+      html += "</li>"
+      html
     end
 
     def bookmarks

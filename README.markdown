@@ -20,11 +20,42 @@ The only parameters you can pass with the tag are: `user`, `limit`, and `tags`.
 
     pinboard_tag:
       user:       "ericdfields"
-      limit:      15               # default
-      list_tag:   "ol"             # default
-      list_class: "pinboard_list"  # default
-      a_target:   "_blank"         # default is ""
+      limit:      15
       tags:       "ruby,jekyll"
+      list_tag:   "ol"
+      list_class: "pinboard-list"
+      new_tab:    false
+      show_desc:  false
+
+## Configuration option info:
+
+**`user`**
+
+The pinboard user whose links you want to display. The default is `ericdfields`.
+
+**`limit`**
+
+The number of pinboard bookmarks you want to display. The default is `15`.
+
+**`tags`**
+
+The pinboard tag (or tags) you want to display from your bookmarks.
+
+**`list_tag`**
+
+The HTML tag you want to surround the list of links. The default is `ol`, for an ordered list.
+
+**`list_class`**
+
+The CSS class you want the surrounding list to have. The default is `pinboard-list`.
+
+**`new_tab`**
+
+Set this to `true` if you want the links to open in a new tab/window. The default is `false`.
+
+**`show_desc`**
+
+Set this to `true` if you want the description of your pinboard bookmark to be displayed (if available) in a `blockquote`. The default is `false`.
 
 **Original plugin author:**
 
