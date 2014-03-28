@@ -1,6 +1,6 @@
 # Pinboard tag plugin for Jekyll
 
-Generates a list of links from a user's public [pinboard](http://pinboard.in/) bookmarks.
+Generates a list of links from a user's public [Pinboard](http://pinboard.in/) bookmarks.
 
 ## Usage:
 
@@ -31,15 +31,15 @@ The only parameters you can pass with the tag are: `user`, `limit`, and `tags`.
 
 **`user`**
 
-The pinboard user whose links you want to display. The default is `ericdfields`.
+The Pinboard user whose links you want to display. The default is `ericdfields`.
 
 **`limit`**
 
-The number of pinboard bookmarks you want to display. The default is `15`.
+The number of Pinboard bookmarks you want to display. The default is `15`.
 
 **`tags`**
 
-The pinboard tag (or tags) you want to display from your bookmarks.
+The Pinboard tag (or tags) you want to display from your bookmarks. Separate tags with commas. If no tags are provided, the most recent bookmarks across all tags will be displayed.
 
 **`list_tag`**
 
@@ -55,7 +55,7 @@ Set this to `true` if you want the links to open in a new tab/window. The defaul
 
 **`show_desc`**
 
-Set this to `true` if you want the description of your pinboard bookmark to be displayed (if available) in a `blockquote`. The default is `false`.
+Set this to `true` if you want the description of your Pinboard bookmark to be displayed (if available) in a `blockquote`. The default is `false`.
 
 **Original plugin author:**
 

@@ -1,7 +1,7 @@
 #
-# Pinboard Tag
+# Pinboard tag plugin for Jekyll
 #
-# Generates a list of links to a user's public bookmarks
+# Generates a list of links to a user's public Pinboard bookmarks.
 #
 # Usage:
 #
@@ -28,7 +28,6 @@
 #     new_tab:    false
 #     show_desc:  true
 #
-# Options explanation 
 # ORIGINAL AUTHOR INFO:
 #
 # Eric D. Fields
@@ -51,9 +50,9 @@ module Jekyll
       @options = tag_options(options)
       @config = Jekyll.configuration({})['pinboard_tag'] || {}
 
-      @user = @options["user"] || @config["user"] || "ericdfields"
+      @user  = @options["user"]   || @config["user"]  || "ericdfields"
       @limit = (@options["limit"] || @config["limit"] || 15).to_i
-      @tags = @options["tags"] || @config["tags"] || nil
+      @tags  = @options["tags"]   || @config["tags"]  || nil
 
       @config["list_tag"]   ||= "ol"
       @config["list_class"] ||= "pinboard-list"
@@ -70,12 +69,12 @@ module Jekyll
     end
 
     def render_bookmark(bookmark)
-      html = "<li>"
-      html += "<a href=\"#{bookmark.url}\""
+      html  = "<li>"
+      html += "<p><a href=\"#{bookmark.url}\""
       html += " target=\"_blank\"" if @config["new_tab"]
       html += ">"
-      html += "<p>#{bookmark.title}</p>"
-      if @config["show_description"]
+      html += "#{bookmark.title}</a></p>"
+      if @config["show_desc"] && bookmark.description != ""
         html += "<blockquote>#{bookmark.description}</blockquote>"
       end
       html += "</li>"
@@ -102,8 +101,9 @@ module Jekyll
         url += "/"
       end
       url += "?count=#{@limit}"
-      resp = Net::HTTP.get_response(URI.parse(url))
-      return resp.body
+      puts url
+      response = Net::HTTP.get_response(URI.parse(url))
+      return response.body
     end
 
     private
